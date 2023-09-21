@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Timer from "./Timer";
 import "./Task.css";
 
 const Task = ({ task, onTaskComplete, onTaskDelete }) => {
-  const [showTimer, setShowTimer] = useState(true);
+  const [showTimer] = useState(true);
   const [timerActive, setTimerActive] = useState(false);
   const [workDuration, setWorkDuration] = useState(task.time);
-  const [timeRemaining, setTimeRemaining] = useState(task.time);
+  const [timeRemaining] = useState(task.time);
   const [isTimerCompleted, setIsTimerCompleted] = useState(false);
 
   const handleDeleteTask = () => {

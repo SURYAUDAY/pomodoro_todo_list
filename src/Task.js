@@ -79,14 +79,34 @@ const Task = ({ task, onTaskComplete, onTaskDelete }) => {
         </span>
       </div>
       <div className="task-buttons">
-        <button
+        {/*  <button
           onClick={() => onTaskComplete(task.id)}
           disabled={task.completed}
         >
           Complete
+        </button> */}
+        <button
+          onClick={() => onTaskDelete(task.id)}
+          style={{
+            padding: 10,
+            color: "white",
+            fontWeight: "bold",
+            backgroundColor: "black",
+          }}
+        >
+          Delete
         </button>
-        <button onClick={() => onTaskDelete(task.id)}>Delete</button>
-        <button onClick={() => setShowTimer(true)}>Start Pomodoro Timer</button>
+        <button
+          onClick={() => setShowTimer(true)}
+          style={{
+            padding: 10,
+            color: "white",
+            fontWeight: "bold",
+            backgroundColor: "black",
+          }}
+        >
+          Start Pomodoro Timer
+        </button>
       </div>
       {showTimer && (
         <Timer

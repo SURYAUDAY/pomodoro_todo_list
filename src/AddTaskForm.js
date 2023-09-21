@@ -40,26 +40,62 @@ const AddTaskForm = ({ onTaskAdd }) => {
 
   return (
     <div>
-      <h2>Add New Task</h2>
+      <h2>ToDo-List</h2>
       <input
         type="text"
         value={taskName}
         onChange={handleTaskNameChange}
-        placeholder="Task name"
+        placeholder="Enter task"
+        style={{
+          backgroundColor: "bisque",
+          padding: 10,
+          boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)",
+          marginLeft: 10,
+          marginBottom: 10,
+        }}
       />
+      <br />
       <input
         type="number"
         value={taskMinutes}
         onChange={handleTaskMinutesChange}
-        placeholder="Task time (minutes)"
+        placeholder="minutes"
+        style={{
+          backgroundColor: "bisque",
+          padding: 10,
+          boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)",
+          marginLeft: 10,
+          marginBottom: 10,
+        }}
       />
+      <br />
       <input
         type="number"
         value={taskSeconds}
         onChange={handleTaskSecondsChange}
-        placeholder="Task time (seconds)"
+        placeholder="seconds"
+        style={{
+          backgroundColor: "bisque",
+          padding: 10,
+          boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)",
+          marginLeft: 10,
+          marginBottom: 10,
+        }}
       />
-      <button onClick={handleAddTask}>Add Task</button>
+      <br />
+      <button
+        onClick={handleAddTask}
+        style={{
+          marginLeft: 10,
+          padding: 10,
+          color: "white",
+          fontWeight: "bold",
+          backgroundColor: "black",
+          marginBottom: 10,
+        }}
+      >
+        Add Task
+      </button>
     </div>
   );
 };

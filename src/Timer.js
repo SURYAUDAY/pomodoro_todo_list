@@ -39,7 +39,17 @@ const Timer = ({ workDuration, breakDuration, onTimerComplete }) => {
       <h2>Pomodoro Timer</h2>
       <div>
         <p>Time Remaining: {formatTime()}</p>
-        <button onClick={toggleTimer}>{isActive ? "Pause" : "Start"}</button>
+        <button
+          onClick={toggleTimer}
+          style={{
+            padding: 10,
+            color: "white",
+            fontWeight: "bold",
+            backgroundColor: "black",
+          }}
+        >
+          {isActive ? "Pause" : "Start"}
+        </button>
       </div>
     </div>
   );

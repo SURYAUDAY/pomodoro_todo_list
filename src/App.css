@@ -1,0 +1,54 @@
+/* App.css */
+.app {
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.task-input {
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.add-button {
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.start-button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.timer {
+  width: 200px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.timer div {
+  font-size: 24px;
+  font-weight: bold;
+}

@@ -1,0 +1,24 @@
+/* Task.css */
+.task-container {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #3498db;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #ecf0f1;
+  border-radius: 5px;
+}
+
+.task-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.task-buttons button {
+  margin-right: 5px;
+}
+
+.task-time {
+  font-style: italic;
+}

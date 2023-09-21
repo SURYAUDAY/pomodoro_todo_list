@@ -8,7 +8,7 @@ const TaskList = ({ tasks, onTaskComplete, onTaskDelete }) => {
       style={{
         marginLeft: 600,
         maxWidth: 400,
-        marginTop: -271,
+        //marginTop: -171,
       }}
     >
       <h2>Task List</h2>

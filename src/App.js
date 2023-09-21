@@ -1,4 +1,3 @@
-// App.js
 import React, { useState } from "react";
 import TaskList from "./TaskList";
 import AddTaskForm from "./AddTaskForm";
@@ -29,7 +28,13 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
       <AddTaskForm onTaskAdd={handleTaskAdd} />
       <TaskList
         tasks={tasks}

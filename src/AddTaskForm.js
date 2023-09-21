@@ -94,7 +94,7 @@ const AddTaskForm = ({ onTaskAdd }) => {
           marginBottom: 10,
         }}
       >
-        Add Task
+        Start Task
       </button>
     </div>
   );

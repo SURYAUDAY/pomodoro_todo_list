@@ -6,11 +6,12 @@ const Timer = ({
   onTimerComplete,
   timeRemaining,
   isCompleted,
+  timerActive,
 }) => {
   const [timer, setTimer] = useState(workDuration);
 
   useEffect(() => {
-    if (timer > 0 && !isCompleted) {
+    if (timer > 0 && timerActive) {
       const interval = setInterval(() => {
         setTimer((prevTime) => prevTime - 1);
       }, 1000);
@@ -19,7 +20,7 @@ const Timer = ({
     if (timer === 0 && !isCompleted) {
       onTimerComplete();
     }
-  }, [timer, isCompleted, onTimerComplete]);
+  }, [timer, timerActive, isCompleted, onTimerComplete]);
 
   const formattedTime = () => {
     const minutes = Math.floor(timer / 60)
@@ -31,7 +32,9 @@ const Timer = ({
 
   return (
     <div>
-      <h2>Time Remaining: {formattedTime()}</h2>
+      <h2 className={timerActive ? "format" : ""}>
+        Time Remaining: {formattedTime()}
+      </h2>
     </div>
   );
 };

@@ -6,17 +6,25 @@ import "./Task.css"; // Import the CSS file
 const Task = ({ task, onTaskComplete, onTaskDelete }) => {
   const [showTimer, setShowTimer] = useState(true);
   const [timerActive, setTimerActive] = useState(true);
-  const [workDuration, setWorkDuration] = useState(task.time);
+  const [workDuration] = useState(task.time);
   const [timeRemaining, setTimeRemaining] = useState(task.time);
   const [isTimerCompleted, setIsTimerCompleted] = useState(false);
 
   useEffect(() => {
+    let timerInterval;
+
     if (timerActive && timeRemaining > 0) {
-      const timerInterval = setInterval(() => {
-        setTimeRemaining((prevTime) => prevTime - 1);
+      timerInterval = setInterval(() => {
+        setTimeRemaining((prevTime) => {
+          if (prevTime > 0) {
+            return prevTime - 1;
+          }
+          return prevTime;
+        });
       }, 1000);
-      return () => clearInterval(timerInterval);
     }
+
+    return () => clearInterval(timerInterval);
   }, [timerActive, timeRemaining]);
 
   const handleTimerComplete = () => {
@@ -42,15 +50,18 @@ const Task = ({ task, onTaskComplete, onTaskDelete }) => {
         </span> */}
       </div>
       <div className="task-buttons">
-        {
-          <button
-            onClick={() => onTaskComplete(task.id)}
-            disabled={task.completed}
-            style={{ display: "none" }}
-          >
-            Complete
-          </button>
-        }
+        <button
+          onClick={() => onTaskComplete(task.id)}
+          disabled={task.completed}
+          style={{
+            padding: 10,
+            color: "white",
+            fontWeight: "bold",
+            backgroundColor: "black",
+          }}
+        >
+          Complete
+        </button>
         <button
           onClick={() => onTaskDelete(task.id)}
           style={{
@@ -62,15 +73,18 @@ const Task = ({ task, onTaskComplete, onTaskDelete }) => {
         >
           Delete
         </button>
-        {
-          <button
-            onClick={handleToggleTimer}
-            disabled={task.completed}
-            style={{ display: "none" }}
-          >
-            {timerActive ? "Pause" : "Resume"}
-          </button>
-        }
+        <button
+          onClick={handleToggleTimer}
+          disabled={task.completed}
+          style={{
+            padding: 10,
+            color: "white",
+            fontWeight: "bold",
+            backgroundColor: "black",
+          }}
+        >
+          {timerActive ? "Pause" : "Resume"}
+        </button>
       </div>
       {showTimer && (
         <Timer

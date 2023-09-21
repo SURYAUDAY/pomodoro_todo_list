@@ -1,56 +1,37 @@
 // Timer.js
 import React, { useState, useEffect } from "react";
 
-const Timer = ({ workDuration, breakDuration, onTimerComplete }) => {
-  const [seconds, setSeconds] = useState(workDuration);
-  const [isActive, setIsActive] = useState(false);
+const Timer = ({
+  workDuration,
+  onTimerComplete,
+  timeRemaining,
+  isCompleted,
+}) => {
+  const [timer, setTimer] = useState(workDuration);
 
   useEffect(() => {
-    let interval;
-
-    if (isActive) {
-      interval = setInterval(() => {
-        setSeconds((prevSeconds) => prevSeconds - 1);
+    if (timer > 0 && !isCompleted) {
+      const interval = setInterval(() => {
+        setTimer((prevTime) => prevTime - 1);
       }, 1000);
-    } else {
-      clearInterval(interval);
+      return () => clearInterval(interval);
     }
-
-    if (seconds === 0) {
-      setIsActive(false);
+    if (timer === 0 && !isCompleted) {
       onTimerComplete();
     }
+  }, [timer, isCompleted, onTimerComplete]);
 
-    return () => clearInterval(interval);
-  }, [isActive, seconds, onTimerComplete]);
-
-  const formatTime = () => {
-    const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = seconds % 60;
-    return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
-  };
-
-  const toggleTimer = () => {
-    setIsActive(!isActive);
+  const formattedTime = () => {
+    const minutes = Math.floor(timer / 60)
+      .toString()
+      .padStart(2, "0");
+    const seconds = (timer % 60).toString().padStart(2, "0");
+    return `${minutes}:${seconds}`;
   };
 
   return (
     <div>
-      <h2>Pomodoro Timer</h2>
-      <div>
-        <p>Time Remaining: {formatTime()}</p>
-        <button
-          onClick={toggleTimer}
-          style={{
-            padding: 10,
-            color: "white",
-            fontWeight: "bold",
-            backgroundColor: "black",
-          }}
-        >
-          {isActive ? "Pause" : "Start"}
-        </button>
-      </div>
+      <h2>Time Remaining: {formattedTime()}</h2>
     </div>
   );
 };

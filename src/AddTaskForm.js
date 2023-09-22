@@ -105,6 +105,16 @@ const AddTaskForm = ({ onTaskAdd }) => {
       >
         Start Task
       </Button>
+      <img
+        src="../asset/rickymonty.png"
+        alt="watching at timer"
+        style={{
+          marginLeft: "234px",
+          marginTop: "-300px",
+          position: "fixed",
+          width: "400px",
+        }}
+      />
     </div>
   );
 };

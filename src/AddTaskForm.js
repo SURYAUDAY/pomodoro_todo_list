@@ -2,6 +2,10 @@
 import React, { useState } from "react";
 import "tabler-react/dist/Tabler.css";
 import { Form, Button } from "tabler-react";
+import "tabler-react/dist/Tabler.css";
+import Alert from "@mui/material/Alert";
+import Stack from "@mui/material/Stack";
+import "./Task.css";
 
 const AddTaskForm = ({ onTaskAdd }) => {
   const [taskName, setTaskName] = useState("");
@@ -34,14 +38,27 @@ const AddTaskForm = ({ onTaskAdd }) => {
       setTaskMinutes("");
       setTaskSeconds("");
     } else {
-      alert(
-        "Please enter a valid task name and task time (minutes and seconds)."
-      );
+      <Stack sx={{ width: "100%" }} spacing={2}>
+        <Alert severity="warning">
+          This is a warning alert — check it out!
+        </Alert>
+      </Stack>;
     }
   };
 
   return (
-    <div>
+    <div
+      style={{
+        boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+        border: "0.2px solid black",
+        padding: "15px",
+        width: "350px",
+        backgroundImage: 'url("../asset/svg.png")',
+        backgroundPosition: "bottom",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "100%",
+      }}
+    >
       <h2 style={{ marginBottom: "10px", fontFamily: "poppins sans-serif" }}>
         Add ToDo-Task
       </h2>
@@ -109,7 +126,7 @@ const AddTaskForm = ({ onTaskAdd }) => {
         src="../asset/rickymonty.png"
         alt="watching at timer"
         style={{
-          marginLeft: "234px",
+          marginLeft: "334px",
           marginTop: "-300px",
           position: "fixed",
           width: "400px",

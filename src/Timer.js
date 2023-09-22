@@ -1,6 +1,5 @@
 // Timer.js
 import React, { useState, useEffect } from "react";
-import { Header } from "tabler-react";
 
 const Timer = ({
   workDuration,

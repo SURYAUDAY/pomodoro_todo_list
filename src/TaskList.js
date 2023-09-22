@@ -11,7 +11,9 @@ const TaskList = ({ tasks, onTaskComplete, onTaskDelete }) => {
         //marginTop: -171,
       }}
     >
-      <h2>Task List</h2>
+      <h2 style={{ marginBottom: "10px", fontFamily: "poppins sans-serif" }}>
+        Task List
+      </h2>
       {tasks.map((task) => (
         <Task
           key={task.id}

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import TaskList from "./TaskList";
 import AddTaskForm from "./AddTaskForm";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
@@ -28,20 +30,24 @@ const App = () => {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <AddTaskForm onTaskAdd={handleTaskAdd} />
-      <TaskList
-        tasks={tasks}
-        onTaskComplete={handleTaskComplete}
-        onTaskDelete={handleTaskDelete}
-      />
-    </div>
+    <>
+      <Navbar />
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <AddTaskForm onTaskAdd={handleTaskAdd} />
+        <TaskList
+          tasks={tasks}
+          onTaskComplete={handleTaskComplete}
+          onTaskDelete={handleTaskDelete}
+        />
+      </div>
+      <Footer />
+    </>
   );
 };
 

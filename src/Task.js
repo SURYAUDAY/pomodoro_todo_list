@@ -40,6 +40,8 @@ const Task = ({ task, onTaskComplete, onTaskDelete }) => {
           style={{
             textDecoration: task.completed ? "line-through" : "none",
             color: "Red",
+            fontFamily: "sans-serif",
+            fontWeight: "bold",
           }}
         >
           Task name: {task.name}
@@ -54,6 +56,7 @@ const Task = ({ task, onTaskComplete, onTaskDelete }) => {
               color: "white",
               fontWeight: "bold",
               backgroundColor: "black",
+              marginBottom: "10px",
             }}
           >
             {timerActive ? "Pause Pomodoro Timer" : "Start Pomodoro Timer"}
@@ -66,6 +69,7 @@ const Task = ({ task, onTaskComplete, onTaskDelete }) => {
             color: "white",
             fontWeight: "bold",
             backgroundColor: "black",
+            marginBottom: "10px",
           }}
         >
           Delete

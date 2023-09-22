@@ -40,7 +40,9 @@ const AddTaskForm = ({ onTaskAdd }) => {
 
   return (
     <div>
-      <h2>ToDo-List</h2>
+      <h2 style={{ marginBottom: "10px", fontFamily: "poppins sans-serif" }}>
+        Add ToDo-Task
+      </h2>
       <input
         type="text"
         value={taskName}

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Timer from "./Timer";
 import "./Task.css";
+import "tabler-react/dist/Tabler.css";
+import { Button } from "tabler-react";
 
 const Task = ({ task, onTaskComplete, onTaskDelete }) => {
   const [showTimer] = useState(true);
@@ -49,31 +51,33 @@ const Task = ({ task, onTaskComplete, onTaskDelete }) => {
       </div>
       <div className="task-buttons">
         {timeRemaining > 0 && (
-          <button
+          <Button
+            color="success"
             onClick={timerActive ? handlePauseTimer : handleToggleTimer}
             style={{
               padding: 10,
               color: "white",
               fontWeight: "bold",
               backgroundColor: "black",
-              marginBottom: "10px",
+              marginBottom: "20px",
             }}
           >
             {timerActive ? "Pause Pomodoro Timer" : "Start Pomodoro Timer"}
-          </button>
+          </Button>
         )}
-        <button
+        <Button
+          color="danger"
           onClick={handleDeleteTask}
           style={{
             padding: 10,
             color: "white",
             fontWeight: "bold",
             backgroundColor: "black",
-            marginBottom: "10px",
+            marginBottom: "20px",
           }}
         >
           Delete
-        </button>
+        </Button>
       </div>
       {showTimer && (
         <Timer

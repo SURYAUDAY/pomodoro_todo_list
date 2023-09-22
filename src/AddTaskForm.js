@@ -1,5 +1,7 @@
 // AddTaskForm.js
 import React, { useState } from "react";
+import "tabler-react/dist/Tabler.css";
+import { Form, Button } from "tabler-react";
 
 const AddTaskForm = ({ onTaskAdd }) => {
   const [taskName, setTaskName] = useState("");
@@ -43,52 +45,57 @@ const AddTaskForm = ({ onTaskAdd }) => {
       <h2 style={{ marginBottom: "10px", fontFamily: "poppins sans-serif" }}>
         Add ToDo-Task
       </h2>
-      <input
-        type="text"
+      <Form.Input
+        name="username"
+        label="Task name"
+        placeholder="Enter Task name"
         value={taskName}
         onChange={handleTaskNameChange}
-        placeholder="Enter task"
         style={{
           backgroundColor: "bisque",
           padding: 10,
           boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)",
-          marginLeft: 10,
+
           marginBottom: 10,
         }}
       />
       <br />
-      <input
+      <Form.Input
+        name="minutes"
+        label="Enter minutes"
+        placeholder="Enter minutes"
         type="number"
         value={taskMinutes}
         onChange={handleTaskMinutesChange}
-        placeholder="minutes"
         style={{
           backgroundColor: "bisque",
           padding: 10,
           boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)",
-          marginLeft: 10,
+          marginTop: "-15px",
           marginBottom: 10,
         }}
       />
       <br />
-      <input
+      <Form.Input
+        name="seconds"
+        label="Enter seconds"
+        placeholder="Enter seconds"
         type="number"
         value={taskSeconds}
         onChange={handleTaskSecondsChange}
-        placeholder="seconds"
         style={{
           backgroundColor: "bisque",
           padding: 10,
           boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)",
-          marginLeft: 10,
+
           marginBottom: 10,
         }}
       />
       <br />
-      <button
+      <Button
+        color="success"
         onClick={handleAddTask}
         style={{
-          marginLeft: 10,
           padding: 10,
           color: "white",
           fontWeight: "bold",
@@ -97,7 +104,7 @@ const AddTaskForm = ({ onTaskAdd }) => {
         }}
       >
         Start Task
-      </button>
+      </Button>
     </div>
   );
 };

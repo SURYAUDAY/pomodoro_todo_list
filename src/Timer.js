@@ -1,5 +1,6 @@
 // Timer.js
 import React, { useState, useEffect } from "react";
+import { Header } from "tabler-react";
 
 const Timer = ({
   workDuration,
@@ -32,9 +33,12 @@ const Timer = ({
 
   return (
     <div>
-      <h2 className={timerActive ? "format" : ""}>
+      <h3
+        className={timerActive ? "format" : ""}
+        style={{ fontFamily: "digital-clock-font" }}
+      >
         Time Remaining: {formattedTime()}
-      </h2>
+      </h3>
     </div>
   );
 };

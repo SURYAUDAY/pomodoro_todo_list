@@ -23,6 +23,16 @@ const TaskList = ({ tasks, onTaskComplete, onTaskDelete }) => {
           style={{ boxShadow: "0 3px 10px rgb(0 0 0 / 0.2)" }}
         />
       ))}
+      <img
+        src="../asset/rickymonty.png"
+        alt="watching at timer"
+        style={{
+          marginLeft: "-434px",
+          marginTop: "-300px",
+          position: "fixed",
+          width: "400px",
+        }}
+      />
     </div>
   );
 };

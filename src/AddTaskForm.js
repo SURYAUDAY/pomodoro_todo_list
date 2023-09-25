@@ -9,7 +9,7 @@ import "./Task.css";
 
 const AddTaskForm = ({ onTaskAdd }) => {
   const [taskName, setTaskName] = useState("");
-  const [updated, setUpdated] = useState(taskName);
+  //const [setUpdated] = useState(taskName);
   const [taskMinutes, setTaskMinutes] = useState("");
   const [taskSeconds, setTaskSeconds] = useState("");
 
@@ -38,7 +38,7 @@ const AddTaskForm = ({ onTaskAdd }) => {
       setTaskName("");
       setTaskMinutes("");
       setTaskSeconds("");
-      setUpdated(taskName);
+      //setUpdated(taskName);
     } else {
       <Stack sx={{ width: "100%" }} spacing={2}>
         <Alert severity="warning">
@@ -123,7 +123,7 @@ const AddTaskForm = ({ onTaskAdd }) => {
             marginBottom: 10,
           }}
         >
-          Start Task
+          Add Task
         </Button>
         <img
           src="../asset/rick2.png"
@@ -135,21 +135,19 @@ const AddTaskForm = ({ onTaskAdd }) => {
             width: "400px",
           }}
         />
-        <p
-          style={{
-            marginLeft: "560px",
-            marginTop: "-327px",
-            position: "fixed",
-            display: "inline",
-          }}
-        >
-          Do your{" "}
-          <p style={{ color: "red", display: "inline", fontWeight: "bold" }}>
-            {updated}
+        {
+          <p
+            style={{
+              marginLeft: "560px",
+              marginTop: "-327px",
+              position: "fixed",
+              display: "inline",
+            }}
+          >
+            Do your <br />
+            task right now!!!
           </p>
-          <br />
-          task right now!!!
-        </p>
+        }
       </div>
     </>
   );

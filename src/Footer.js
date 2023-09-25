@@ -19,7 +19,7 @@ const Footer = () => {
         backgroundRepeat: "repeat",
       }}
     >
-      <h3 style={{}}>&copy; Suryauday Prakash Mishra, 2023.</h3>
+      <h3>&copy; Suryauday Prakash Mishra, 2023.</h3>
     </footer>
   );
 };
